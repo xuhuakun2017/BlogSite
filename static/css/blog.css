@@ -1,0 +1,43 @@
+.col-xs-10 {
+    width: 83.33333333%;
+    background: white;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    margin-left: 10px;
+    padding: 0 40px 40px 40px;
+}
+.blog_title{
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+.blog-info-description{
+    font-size: 15px;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.blog-info-description span {
+    padding-right:5px;
+    padding-left:3px;
+}
+.blog-info-description .created_time{
+    border-bottom: 1px dashed #999;
+}
+
+.blog-info-description a{
+    color: #606266;
+    font-size: 15px;
+    border-bottom: 1px solid #999;
+}
+.blog-body h6{
+    margin-bottom: 1.5em;
+    margin: 0 0 10px;
+    font-size: 14px;
+    text-align:justify; 
+    text-justify:inter-ideograph;
+    text-indent: 2em;
+    line-height: 2.0em;
+}

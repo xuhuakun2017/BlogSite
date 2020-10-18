@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block header_extends %}
+<link rel="stylesheet" href="../static/css/blog.css" type = "text/css">
+{% endblock %}
+{% block jumbotron %}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <h3 class="blog_title">{{ blog.title }}</h3>
+            <ul class="blog-info-description">
+                <li class="">作者：{{ blog.user }}</li>
+                <span class="item-separator">|</span>
+                <li class="">分类：<a href="">{{ blog.types }}</a></li>
+                <span class="item-separator">|</span>
+                发表日期：<li class="created_time">{{ blog.created_time|date:"Y-m-d" }}</li>
+            </ul>              
+            <div class="blog-body">{{ blog.body|safe }}</div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %} 

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block header_extends %}
+    <link rel="stylesheet" href="../static/css/index.css">
+    {% endblock %}
+    {% block jumbotron %}
+    <!-- 轮播图 -->
+    <div class="jumbotron">
+      <!-- <img src="/media/head-img.jpg"> -->
+      <div class="cover-info">
+        <h1><a href="">Xu&Pu的杂货店</a></h1>
+        <p>记录理想、奔赴</p>
+      </div>
+    </div>
+    {% endblock %}
+  
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+      {%for blog in blogs%}
+          <div class="blog-article-box">
+            <!-- 封面照片 -->
+            <!-- 封面文字 -->
+            <div class="blog-info">
+              <a href="{% url 'blog_detail' blog.id %}">
+                <div class="blog-title">{{blog.title}}</div>
+              </a>
+
+              <div class="blog-items">
+                <span class="glyphicon glyphicon-fire">置顶</span>
+                <span class="item-separator">|</span>
+                <span class="glyphicon glyphicon-time">{{blog.created_time|date:"Y-m-d"}}</span>
+                <span class="item-separator">|</span>
+                <span class="glyphicon glyphicon-user">{{blog.user}}</span>
+                <span class="item-separator">|</span>
+                <span class="glyphicon glyphicon-tag">{{blog.types}}</span>
+              </div>
+              <div class="blog-abstract">{{blog.abstract|truncatechars:50}}...</div> 
+        </div>
+            <div class="img-bg">
+              <a href="" title="{{blog.title}}">
+                <img class="blog-bg" src="../media/{{blog.img}}" alt="">
+              </a>
+            </div>
+      </div>   
+      {%endfor%}
+    </div>
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-4">
+        <div class="blog-info-box">
+          <div class="blog-info-items myself-info">
+              {%for info in infos%}
+              <div class="user-img">
+                <img src="../media/{{info.img}}" alt="">
+              </div>
+              <div class="user-name">{{info.name}}</div>
+              <div class="user-told">{{info.told}}</div>
+              <div class="myself-data">
+                <div class="box-info-data-item">
+                  <a href="">
+                    <div class="headline">文章</div>
+                    <div class="count_num">{{blogs.count}}</div>
+                  </a>
+                </div>
+                <div class="box-info-data-item">
+                  <a href="">
+                    <div class="headline">分类</div>
+                    <div class="count_num">{{types.count}}</div>
+                  </a>
+                </div>
+                <div class="box-info-data-item">
+                  <a href="">
+                    <div class="headline">标签</div>
+                    <div class="count_num">{{tags.count}}</div>
+                  </a>
+                </div>
+              </div>
+              {%endfor%}
+          </div>
+
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    </div>
+  </div>
+</div>
+
+{% endblock %}  
+
+</body>
+</html>
